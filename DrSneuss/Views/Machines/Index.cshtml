@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@using DrSneuss.Models;
+@model List<DrSneuss.Models.Machine>;
+
+<h1>Absurd Machines Repair</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>We like you a lot, but machines there are not! </h3>
+}
+
+<ul>
+  @foreach(Machine machine in Model)
+  {
+    <li>@Html.ActionLink($"{machine.MachineName}", "Details", new { id = machine.MachineId })</li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Add a machine", "Create")</p>
+<p>@Html.ActionLink("See the Engineers", "Index", "Engineers")</p>
+<p>@Html.ActionLink("Return Home", "Index", "Home")</p>
