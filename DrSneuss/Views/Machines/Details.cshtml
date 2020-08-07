@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DrSneuss.Models.Machine
+<h2>Absurd Machine repair details:</h2>
+
+<hr />
+<h3>Machine Type: @Html.DisplayFor(model => model.MachineName)</h3>
+
+@if(@Model.Engineers.Count == 0)
+{
+  <p>This machine does not have any engineers attached</p>
+}
+else
+{
+  <h4>Engineers who specialize in this item: </h4>
+  <ul>
+    @foreach(var join in Model.Engineers)
+    {
+      <li>@join.Engineer.EngineerName</li>
+
+    }
+  </ul>
+}
