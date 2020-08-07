@@ -34,5 +34,13 @@ namespace DrSneuss.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    public ActionResult Details(int id)
+    {
+      var thisMachine = _db.Machines
+        .Include(machine => machine.Engineers)
+        .ThenInclude(join => join.Engineer)
+        .FirstOrDefault(machines => machines.MachineId == id);
+      return View(thisMachine);
+    }
   }
 }

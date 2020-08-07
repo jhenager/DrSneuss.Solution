@@ -23,6 +23,7 @@ namespace DrSneuss.Controllers
 
     public ActionResult Create()
     {
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "MachineName");
       return View();
     }
 
