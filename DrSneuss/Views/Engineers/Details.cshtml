@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DrSneuss.Models.Engineer;
+
+<h2>Engineer Details:</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
+
+@if (Model.Machines.Count == 0)
+{
+  <p>I've looked, I've checked; there are no machines to inspect!</p>
+}
+else
+{
+  <ul>
+    @foreach(var join in @Model.Machines)
+    {
+      <li>Machine type: @join.Machine.MachineName</li>
+      <p>@Html.ActionLink("Details", "Details", new { id = join.Machine.MachineId }) </p> 
+    }
+  </ul>
+}
+<br>
+<p>@Html.ActionLink("Back to Engineer List", "Index")</p>
+
+<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p> 
