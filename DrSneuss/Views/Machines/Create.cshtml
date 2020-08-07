@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@using DrSneuss.Models
+@model DrSneuss.Models.Machine
+
+<h2>No need to worry, to fret, or to care</h2>
+<h4>Just submit an Absurd Machine for Repair</h4>
+@using (@Html.BeginForm())
+{
+  <div class ="form-group">
+    @Html.LabelFor(model => model.MachineName)
+    @Html.TextBoxFor(model => model.MachineName)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.MachineError)
+    @Html.TextBoxFor(model => model.MachineError)
+  </div>
+  <div class="form-group">
+    @Html.Label("Select engineer")
+    @Html.DropDownList("EngineerId")
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.Date)
+    @Html.TextBoxFor(model => model.Date, new { @type = "date", @class = "form-control"})
+  </div>
+  <input type="submit" value="Add a machine" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all Machine repair orders", "Index")</p>
