@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using DrSneuss.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;

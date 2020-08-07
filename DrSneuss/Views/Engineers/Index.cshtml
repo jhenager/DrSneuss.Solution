@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@using DrSneuss.Models;
+@model List<DrSneuss.Models.Engineer>;
+
+<h3>For quickness and quality, look no further than here</h3>
+<h1>We have bonafide, certified, Sneuss Engineers!</h1>
+
+<ul>
+  @foreach(Engineer engineer in Model)
+  {
+    <li>@Html.ActionLink($"{engineer.EngineerName}", "Details", new { id = engineer.EngineerId }) </li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Add new Engineer", "Create")</p>
+<p>@Html.ActionLink("See all Machines", "Index", "Machines")</p>
+<p>@Html.ActionLink("Return Home", "Index", "Home")</p>
