@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@using DrSneuss.Models
+@model DrSneuss.Models.Engineer
+
+<h2>We fix gloombops to moon-hops, no matter the region</h2>
+<h4>Add an engineer to the Dr. Sneuss Legion!</h4>
+@using (@Html.BeginForm())
+{
+  <div class ="form-group">
+    @Html.LabelFor(model => model.EngineerName)
+    @Html.TextBoxFor(model => model.EngineerName)
+  </div>
+  
+  <div class="form-group">
+    @Html.Label("Select Specialty")
+    @Html.DropDownList("MachineId")
+  </div>
+  
+  <input type="submit" value="Add a machine" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all Machine repair orders", "Index")</p>    

@@ -20,5 +20,20 @@ namespace DrSneuss.Controllers
       List<Engineer> model = _db.Engineers.ToList();
       return View(model);
     }
+    public ActionResult Create()
+    {
+      return View();
+    }
+    [HttpPost]
+    public ActionResult Create(Engineer engineer, int MachineId)
+    {
+      _db.Engineers.Add(engineer);
+      if (MachineId != 0)
+      {
+        _db.MachineEngineer.Add(new MachineEngineer() {MachineId = MachineId, EngineerId = engineer.EngineerId});
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
