@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model DrSneuss.Models.Machine
+
+<h2>Edit a Machine:</h2>
+<h4>@Html.DisplayFor(model => model.MachineName)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.MachineId)
+  @Html.LabelFor(model => model.MachineName)
+  @Html.EditorFor(model => model.MachineName)
+  @Html.Label("Select Engineer")
+  @Html.DropDownList("EngineerId")
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>
