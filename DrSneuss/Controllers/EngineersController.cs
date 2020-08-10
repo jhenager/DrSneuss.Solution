@@ -74,5 +74,13 @@ namespace DrSneuss.Controllers
         _db.SaveChanges();
         return RedirectToAction("Index");
     }
+    [HttpPost]
+    public ActionResult DeleteMachine (int joinId)
+    {
+      var joinEntry = _db.MachineEngineer.FirstOrDefault(entry => entry.MachineEngineerId == joinId);
+      _db.MachineEngineer.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
