@@ -1,6 +1,6 @@
 **<h1 align = "center"> Dr. Sneuss Absurd Machine Repair**
 
-**<h3 align="center">Helping salon owners keep track of their clients and stylists**
+**<h3 align="center">Helping Dr. Sneuss keep track of their engineers and machines**
 
 **ABOUT**
 
