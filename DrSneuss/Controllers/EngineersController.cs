@@ -66,6 +66,24 @@ namespace DrSneuss.Controllers
         return View(thisEngineer);
     }
 
+    public ActionResult AddMachine(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "MachineName");
+      return View(thisEngineer);
+    }
+
+    [HttpPost]
+    public ActionResult AddMachine(Engineer engineer, int MachineId)
+    {
+      if (MachineId != 0)
+      {
+        _db.MachineEngineer.Add(new MachineEngineer() {MachineId = MachineId, EngineerId = engineer.EngineerId});
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
