@@ -6,7 +6,7 @@
 
 </p>
 
-_This Machine repair app is designed to help Dr. Sneuss keep track of his engineers and machine repairs. This app utilizes razor c# asp.net core mvc with entity framework using the CRUD naming convention._
+_This Machine repair app is designed to help Dr. Sneuss keep track of his engineers and machine repairs. This app utilizes razor, c#, asp.net core, mvc with entity framework using the CRUD naming convention._
 
 
 ## **REQUIREMENTS**
