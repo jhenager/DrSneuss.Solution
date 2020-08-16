@@ -1,6 +1,6 @@
 **<h1 align = "center"> Dr. Sneuss Absurd Machine Repair**
 
-**<h3 align="center">Helping Dr. Sneuss keep track of their engineers and machines**
+**<h3 align="center">Application made for Epicodus to demonstrate understanding of many-to-many relationships in SQL using ASP.net core and mvc with entity framework**
 
 **ABOUT**
 
