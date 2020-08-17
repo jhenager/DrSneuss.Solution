@@ -3,14 +3,16 @@ using System;
 using DrSneuss.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DrSneuss.Migrations
 {
     [DbContext(typeof(DrSneussContext))]
-    partial class DrSneussContextModelSnapshot : ModelSnapshot
+    [Migration("20200817064310_Sneuss")]
+    partial class Sneuss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -51,7 +51,9 @@ namespace DrSneuss.Controllers
     [HttpPost]
     public ActionResult Edit(Machine machine, int EngineerId)
     {
-      if(EngineerId != 0)
+      var existingConnection = _db.MachineEngineer.FirstOrDefault(join => join.MachineId == machine.MachineId && join.EngineerId == EngineerId);
+
+      if(existingConnection == null && EngineerId != 0)
       {
         _db.MachineEngineer.Add(new MachineEngineer() {EngineerId = EngineerId, MachineId = machine.MachineId});
       }
@@ -91,7 +93,7 @@ namespace DrSneuss.Controllers
     }
 
     [HttpPost]
-    public ActionResult DeleteCategory (int joinId)
+    public ActionResult DeleteEngineer (int joinId)
     {
       var joinEntry = _db.MachineEngineer.FirstOrDefault(entry => entry.MachineEngineerId == joinId);
       _db.MachineEngineer.Remove(joinEntry);
